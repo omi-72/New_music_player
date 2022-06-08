@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     public void onPermissionsDenied(int requestCode, List<String> list) {
         // Some permissions have been denied
         // ...
+        Toast.makeText(MainActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+
     }
 
 }
