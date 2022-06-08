@@ -62,7 +62,13 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 long id = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID));
                 String name = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DISPLAY_NAME));
                 Uri audioUri = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id);
-            
+
+                if (cursor.isLast()){
+                    break;
+                } else{
+                    cursor.moveToNext();
+                }
+
             }
 
         }
