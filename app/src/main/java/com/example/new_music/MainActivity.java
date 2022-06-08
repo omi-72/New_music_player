@@ -54,6 +54,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
         Cursor cursor = getContentResolver().query(contentUri,projection,null,null,null);
 
+        if (cursor !=null){
+            cursor.moveToPosition(0);
+        
+        }
 
     }
 
