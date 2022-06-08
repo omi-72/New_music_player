@@ -2,6 +2,7 @@ package com.example.new_music;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.Toast;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         MediaStore.Audio.Media.DISPLAY_NAME
 
                 };
+        Uri contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
 
 
     }
