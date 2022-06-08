@@ -3,6 +3,7 @@ package com.example.new_music;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.widget.Toast;
 
 import java.util.List;
@@ -37,6 +38,18 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     }
 
     private void getData() {
+
+        String[] projection = new String[]
+                {
+                        MediaStore.Audio.Media._ID,
+                        MediaStore.Audio.Media.SIZE,
+                        MediaStore.Audio.Media.DATE_MODIFIED,
+                        MediaStore.Audio.Media.BUCKET_DISPLAY_NAME,
+                        MediaStore.Audio.Media.DISPLAY_NAME
+
+                };
+
+
     }
 
     @Override
