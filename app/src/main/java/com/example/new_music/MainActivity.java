@@ -2,6 +2,7 @@ package com.example.new_music;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentUris;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -56,7 +57,14 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
         if (cursor !=null){
             cursor.moveToPosition(0);
-        
+            while (true) {
+
+                long id = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID));
+                String name = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DISPLAY_NAME));
+                Uri audioUri = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id);
+            
+            }
+
         }
 
     }
