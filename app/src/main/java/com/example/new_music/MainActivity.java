@@ -2,6 +2,7 @@ package com.example.new_music;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
                 };
         Uri contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+
+        Cursor cursor = getContentResolver().query(contentUri,projection,null,null,null);
 
 
     }
