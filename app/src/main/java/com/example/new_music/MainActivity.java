@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.List;
@@ -62,6 +63,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 long id = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID));
                 String name = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DISPLAY_NAME));
                 Uri audioUri = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id);
+
+                Audio audio = new Audio(name,audioUri);
+
+                Log.i("TAG", "getData: " + audio.toString());
 
                 if (cursor.isLast()){
                     break;
