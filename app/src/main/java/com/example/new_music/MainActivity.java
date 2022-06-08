@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
         Toast.makeText(MainActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
 
+        getData();
+    }
+
+    private void getData() {
     }
 
     @Override
