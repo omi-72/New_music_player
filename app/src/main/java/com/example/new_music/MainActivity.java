@@ -3,6 +3,7 @@ package com.example.new_music;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     @Override
@@ -28,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     public void onPermissionsGranted(int requestCode, List<String> list) {
         // Some permissions have been granted
         // ...
+
+        Toast.makeText(MainActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
